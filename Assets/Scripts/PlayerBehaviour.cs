@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 
-public class PlayerInputBehaviour : MonoBehaviour {
+public class PlayerBehaviour : MonoBehaviour {
 	public Vector2 Speed;
 	private Rigidbody2D _body;
+	public float Health;
 
 	private void Start() {
 		_body = GetComponent<Rigidbody2D>();
