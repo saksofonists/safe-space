@@ -15,4 +15,8 @@ public class FinishSpot : MonoBehaviour, IPlayerWatcher  {
 
         FindObjectOfType<EntityManager>().gameObject.SetActive(false);
     }
+
+    public void StopColliding(PlayerBehaviour player) {
+       
+    }
 }

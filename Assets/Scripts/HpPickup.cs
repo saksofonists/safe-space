@@ -11,4 +11,8 @@ public class HpPickup : MonoBehaviour, IPlayerWatcher {
         player.Health += Health;
         Destroy(gameObject);
     }
+
+    public void StopColliding(PlayerBehaviour player) {
+        
+    }
 }

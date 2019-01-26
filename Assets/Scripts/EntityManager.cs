@@ -12,6 +12,7 @@ public class EntityManager : MonoBehaviour {
 
     void Update() {
         foreach (var entity in Entities) {
+            if (!entity.gameObject.activeSelf) continue;
             entity.Tick(_player);
         }
     }

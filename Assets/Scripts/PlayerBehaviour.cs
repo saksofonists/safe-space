@@ -49,7 +49,9 @@ public class PlayerBehaviour : MonoBehaviour {
 		if (Input.GetKey(KeyCode.W)) ydir++;
         if (Input.GetKey(KeyCode.S)) ydir--;
 
-        _body.velocity = Speed * new Vector2(xdir, ydir);
+        if (Speed != Vector2.zero) {
+	        _body.velocity = Speed * new Vector2(xdir, ydir);
+        }
 
         if (xdir != 0 || ydir != 0) clip.UnPause();
         else clip.Pause();
@@ -82,6 +84,7 @@ public class PlayerBehaviour : MonoBehaviour {
 		var watcher = other.gameObject.GetComponent<IPlayerWatcher>();
 		if (watcher == null) return;
 		if (!_enterTimes.ContainsKey(watcher)) return;
+		watcher.StopColliding(this);
 		_enterTimes.Remove(watcher);
 	}
 
@@ -95,6 +98,7 @@ public class PlayerBehaviour : MonoBehaviour {
 		var watcher = other.gameObject.GetComponent<IPlayerWatcher>();
 		if (watcher == null) return;
 		if (!_enterTimes.ContainsKey(watcher)) return;
+		watcher.StopColliding(this);
 		_enterTimes.Remove(watcher);
 	}
 }
