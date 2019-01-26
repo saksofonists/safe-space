@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerBehaviour : MonoBehaviour {
+	public GameObject DeathScreen;
 	public Vector2 Speed;
 	private Rigidbody2D _body;
 	public Animator Animator;
@@ -13,22 +13,23 @@ public class PlayerBehaviour : MonoBehaviour {
 	public float Health {
 		get { return _health; }
 		set {
-			if (value < 0) {
+			_health = value;
+			if (IsDead) {
 				_health = 0;
 				Die();
 			}
-			else if (value > MaxHealth) {
+			else if (_health > MaxHealth) {
 				_health = MaxHealth;
-			}
-			else {
-				_health = value;
 			}
 		}
 	}
 
+	public bool IsDead {
+		get { return Health <= 0.01f; }
+	}
+
 	private void Die() {
-		Debug.Log("F");
-		SceneManager.LoadScene("Scenes/Menu");
+		DeathScreen.SetActive(true);
 	}
 
 	private Dictionary<IPlayerWatcher, float> _enterTimes = new Dictionary<IPlayerWatcher, float>();
@@ -39,6 +40,8 @@ public class PlayerBehaviour : MonoBehaviour {
 	}
 
 	private void Update() {
+		if (IsDead) return;
+		
 		var xdir = 0;
 		var ydir = 0;
 
