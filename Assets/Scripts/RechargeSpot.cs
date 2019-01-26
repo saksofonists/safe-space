@@ -6,4 +6,6 @@ public class RechargeSpot : MonoBehaviour, IPlayerWatcher {
     public void Colliding(float timeDelta, PlayerBehaviour player) {
         player.Health += RechargePerSec * timeDelta;
     }
+
+    public void StopColliding(PlayerBehaviour player) {}
 }
