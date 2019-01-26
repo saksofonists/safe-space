@@ -1,35 +1,35 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehaviour : MonoBehaviour {
-	public GameObject DeathScreen;
 	public Vector2 Speed;
 	private Rigidbody2D _body;
 	public Animator Animator;
 	public float MaxHealth;
+    public AudioSource clip;
 
 	private float _health;
 	public float Health {
 		get { return _health; }
 		set {
-			_health = value;
-			if (IsDead) {
+			if (value < 0) {
 				_health = 0;
 				Die();
 			}
-			else if (_health > MaxHealth) {
+			else if (value > MaxHealth) {
 				_health = MaxHealth;
+			}
+			else {
+				_health = value;
 			}
 		}
 	}
 
-	public bool IsDead {
-		get { return Health <= 0.01f; }
-	}
-
 	private void Die() {
-		DeathScreen.SetActive(true);
+		Debug.Log("F");
+		SceneManager.LoadScene("Scenes/Menu");
 	}
 
 	private Dictionary<IPlayerWatcher, float> _enterTimes = new Dictionary<IPlayerWatcher, float>();
@@ -37,20 +37,53 @@ public class PlayerBehaviour : MonoBehaviour {
 	private void Start() {
 		_body = GetComponent<Rigidbody2D>();
 		_health = MaxHealth;
+        clip.Play();
 	}
 
 	private void Update() {
-		if (IsDead) return;
-		
 		var xdir = 0;
 		var ydir = 0;
 
-		if (Input.GetKey(KeyCode.A)) xdir--;
-		if (Input.GetKey(KeyCode.D)) xdir++;
-		if (Input.GetKey(KeyCode.W)) ydir++;
-		if (Input.GetKey(KeyCode.S)) ydir--;
+        if (Input.GetKey(KeyCode.A))
+        {
+            xdir--;
+        }
+        if (xdir != 0 || ydir != 0)
+        {
+            clip.UnPause();
+        }
+        else clip.Pause();
+        if (Input.GetKey(KeyCode.D))
+        
+            {
+                xdir++;
+            }
+            if (xdir != 0 || ydir != 0)
+            {
+                clip.UnPause();
+            }
+            else clip.Pause();
 
-		_body.velocity = Speed * new Vector2(xdir, ydir);
+		if (Input.GetKey(KeyCode.W))
+        {
+            ydir++;
+        }
+        if (xdir != 0 || ydir != 0)
+        {
+            clip.UnPause();
+        }
+        else clip.Pause();
+        if (Input.GetKey(KeyCode.S))
+        {
+            ydir--;
+        }
+        if (xdir != 0 || ydir != 0)
+        {
+            clip.UnPause();
+        }
+        else clip.Pause();
+
+        _body.velocity = Speed * new Vector2(xdir, ydir);
 
 		if (Animator != null) {
 			Animator.SetBool("MoveLeft", xdir < 0);
@@ -67,6 +100,7 @@ public class PlayerBehaviour : MonoBehaviour {
 			collision.Colliding(current - lastTime, this);
 			_enterTimes[collision] = current;
 		}
+
 	}
 
 	private void OnCollisionEnter2D(Collision2D other) {
