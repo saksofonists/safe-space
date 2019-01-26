@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerBehaviour : MonoBehaviour {
+	public FinishScreenBehaviour FinishScreen;
 	public Vector2 Speed;
 	private Rigidbody2D _body;
 	public Animator Animator;
@@ -28,8 +28,8 @@ public class PlayerBehaviour : MonoBehaviour {
 	}
 
 	private void Die() {
-		Debug.Log("F");
-		SceneManager.LoadScene("Scenes/Menu");
+		FinishScreen.Message = "F";
+		FinishScreen.gameObject.SetActive(true);
 	}
 
 	private Dictionary<IPlayerWatcher, float> _enterTimes = new Dictionary<IPlayerWatcher, float>();
@@ -44,48 +44,17 @@ public class PlayerBehaviour : MonoBehaviour {
 		var xdir = 0;
 		var ydir = 0;
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            xdir--;
-        }
-        if (xdir != 0 || ydir != 0)
-        {
-            clip.UnPause();
-        }
-        else clip.Pause();
-        if (Input.GetKey(KeyCode.D))
-        
-            {
-                xdir++;
-            }
-            if (xdir != 0 || ydir != 0)
-            {
-                clip.UnPause();
-            }
-            else clip.Pause();
-
-		if (Input.GetKey(KeyCode.W))
-        {
-            ydir++;
-        }
-        if (xdir != 0 || ydir != 0)
-        {
-            clip.UnPause();
-        }
-        else clip.Pause();
-        if (Input.GetKey(KeyCode.S))
-        {
-            ydir--;
-        }
-        if (xdir != 0 || ydir != 0)
-        {
-            clip.UnPause();
-        }
-        else clip.Pause();
+        if (Input.GetKey(KeyCode.A)) xdir--;
+        if (Input.GetKey(KeyCode.D)) xdir++;
+		if (Input.GetKey(KeyCode.W)) ydir++;
+        if (Input.GetKey(KeyCode.S)) ydir--;
 
         _body.velocity = Speed * new Vector2(xdir, ydir);
 
-		if (Animator != null) {
+        if (xdir != 0 || ydir != 0) clip.UnPause();
+        else clip.Pause();
+
+        if (Animator != null) {
 			Animator.SetBool("MoveLeft", xdir < 0);
 			Animator.SetBool("MoveRight", xdir > 0);
 			Animator.SetBool("MoveUp", ydir > 0);

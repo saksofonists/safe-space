@@ -2,7 +2,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class DeathScreenBehaviour : MonoBehaviour {
+public class FinishScreenBehaviour : MonoBehaviour {
+    public string Message;
+
+    public Text Title;
     public Button Retry;
     public Button MainMenu;
     public Button Quit;
@@ -12,6 +15,10 @@ public class DeathScreenBehaviour : MonoBehaviour {
         Retry.onClick.AddListener(OnRetry);
         MainMenu.onClick.AddListener(OnMainMenu);
         Quit.onClick.AddListener(OnQuit);
+    }
+
+    private void OnEnable() {
+        Title.text = Message;
     }
 
     private void OnRetry() {
