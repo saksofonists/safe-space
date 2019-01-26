@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 2157703171872634846}
   m_Layer: 0
   m_Name: Bench
-  m_TagString: Untagged
+  m_TagString: Entity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2724,7 +2724,7 @@ GameObject:
   - component: {fileID: 8217279971738915416}
   m_Layer: 0
   m_Name: House3
-  m_TagString: Untagged
+  m_TagString: Obst
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3176,7 +3176,7 @@ GameObject:
   - component: {fileID: 1154030541598212461}
   m_Layer: 0
   m_Name: House1 (2)
-  m_TagString: Untagged
+  m_TagString: Obst
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3280,9 +3280,10 @@ GameObject:
   - component: {fileID: 2871082034370999831}
   - component: {fileID: 2871082034370999830}
   - component: {fileID: 7294712546459164633}
+  - component: {fileID: 1306034363}
   m_Layer: 0
   m_Name: House2
-  m_TagString: Untagged
+  m_TagString: Obst
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3375,6 +3376,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.48, y: 9.6}
   m_EdgeRadius: 0
+--- !u!114 &1306034363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2871082034370999824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee3215a80274a6798e5d3d20319a7d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FinishScreen: {fileID: 0}
+  vAudio: {fileID: 0}
 --- !u!1 &2871082034440336056
 GameObject:
   m_ObjectHideFlags: 0
@@ -3388,7 +3403,7 @@ GameObject:
   - component: {fileID: 4395994618973303363}
   m_Layer: 0
   m_Name: House (1)
-  m_TagString: Untagged
+  m_TagString: Obst
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3494,7 +3509,7 @@ GameObject:
   - component: {fileID: 7184673958320859331}
   m_Layer: 0
   m_Name: House1
-  m_TagString: Untagged
+  m_TagString: Obst
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3600,7 +3615,7 @@ GameObject:
   - component: {fileID: 5810677681224735461}
   m_Layer: 0
   m_Name: House
-  m_TagString: Untagged
+  m_TagString: Obst
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3706,7 +3721,7 @@ GameObject:
   - component: {fileID: 4510403050625192658}
   m_Layer: 0
   m_Name: House4
-  m_TagString: Untagged
+  m_TagString: Obst
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3812,7 +3827,7 @@ GameObject:
   - component: {fileID: 4438769037462058319}
   m_Layer: 0
   m_Name: School
-  m_TagString: Untagged
+  m_TagString: Obst
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113481,7 +113496,7 @@ GameObject:
   - component: {fileID: 4280647466263017438}
   m_Layer: 0
   m_Name: House4 (1)
-  m_TagString: Untagged
+  m_TagString: Obst
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113635,7 +113650,7 @@ GameObject:
   - component: {fileID: 2874676625807508059}
   m_Layer: 0
   m_Name: House1 (1)
-  m_TagString: Untagged
+  m_TagString: Obst
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113741,7 +113756,7 @@ GameObject:
   - component: {fileID: 2738076504638670916}
   m_Layer: 0
   m_Name: House2 (1)
-  m_TagString: Untagged
+  m_TagString: Obst
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113847,7 +113862,7 @@ GameObject:
   - component: {fileID: 6647686501048390634}
   m_Layer: 0
   m_Name: House (2)
-  m_TagString: Untagged
+  m_TagString: Obst
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113953,7 +113968,7 @@ GameObject:
   - component: {fileID: 6181215112731501142}
   m_Layer: 0
   m_Name: shop
-  m_TagString: Untagged
+  m_TagString: Obst
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
