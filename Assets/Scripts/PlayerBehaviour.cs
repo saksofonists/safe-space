@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerBehaviour : MonoBehaviour {
 	public Vector2 Speed;
 	private Rigidbody2D _body;
+	public Animator Animator;
 	public float Health;
 
 	private Dictionary<IPlayerWatcher, float> _enterTimes = new Dictionary<IPlayerWatcher, float>();
@@ -20,6 +21,11 @@ public class PlayerBehaviour : MonoBehaviour {
 		if (Input.GetKey(KeyCode.D)) xdir++;
 		if (Input.GetKey(KeyCode.W)) ydir++;
 		if (Input.GetKey(KeyCode.S)) ydir--;
+		
+		Animator.SetBool("MoveLeft", xdir < 0);
+		Animator.SetBool("MoveRight", xdir > 0);
+		Animator.SetBool("MoveUp", ydir > 0);
+		Animator.SetBool("MoveDown", ydir < 0);
 
 		_body.velocity = Speed * new Vector2(xdir, ydir);
 	}
