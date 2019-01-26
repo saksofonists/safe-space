@@ -306,40 +306,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4079521525651639017, guid: 099a54a70fb7f7240926ee65ddd223a3,
-        type: 3}
-      propertyPath: SprintDuration
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4079521525651639017, guid: 099a54a70fb7f7240926ee65ddd223a3,
-        type: 3}
-      propertyPath: SprintCooldown
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 099a54a70fb7f7240926ee65ddd223a3, type: 3}
---- !u!1 &485068386 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4986691229100216581, guid: 099a54a70fb7f7240926ee65ddd223a3,
-    type: 3}
-  m_PrefabInstance: {fileID: 485068385}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &485068387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 485068386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16f3014c452e4aa19bc75652fd854513, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DefaultSpeed: {x: 3, y: 3}
-  SprintSpeed: {x: 6, y: 6}
-  SprintDuration: 0.7
-  SprintCooldown: 2.5
 --- !u!20 &519420031 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 519420031, guid: 099a54a70fb7f7240926ee65ddd223a3,
