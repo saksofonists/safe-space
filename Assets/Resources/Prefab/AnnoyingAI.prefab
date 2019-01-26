@@ -8,12 +8,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5626114464209318239}
+  - component: {fileID: 3482923042946742170}
   - component: {fileID: 5626114464209318238}
   - component: {fileID: 5626114464209318237}
   - component: {fileID: 4062103296959296226}
   - component: {fileID: 3133688834490411087}
   - component: {fileID: 1990312011650434825}
+  - component: {fileID: 2174149997963036392}
   m_Layer: 0
   m_Name: AnnoyingAI
   m_TagString: Untagged
@@ -21,20 +22,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5626114464209318239
-Transform:
+--- !u!224 &3482923042946742170
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5626114464209318236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.29, y: -7.72, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.29, y: -7.72}
+  m_SizeDelta: {x: 0.64, y: 0.64}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &5626114464209318238
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -137,6 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: {x: 2, y: 2}
   Dps: 1
+  AggroRange: 0
 --- !u!61 &1990312011650434825
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -163,3 +170,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.37358648, y: 0.5216708}
   m_EdgeRadius: 0
+--- !u!222 &2174149997963036392
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5626114464209318236}
+  m_CullTransparentMesh: 0
