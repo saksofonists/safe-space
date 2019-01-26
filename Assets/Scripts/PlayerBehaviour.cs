@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour {
 	public Vector2 Speed;
 	private Rigidbody2D _body;
 	public float Health;
+
+	private Dictionary<IPlayerWatcher, float> _enterTimes = new Dictionary<IPlayerWatcher, float>();
 
 	private void Start() {
 		_body = GetComponent<Rigidbody2D>();
@@ -19,5 +22,28 @@ public class PlayerBehaviour : MonoBehaviour {
 		if (Input.GetKey(KeyCode.S)) ydir--;
 
 		_body.velocity = Speed * new Vector2(xdir, ydir);
+	}
+
+	private void OnCollisionEnter2D(Collision2D other) {
+		var watcher = other.gameObject.GetComponent<IPlayerWatcher>();
+		if (watcher == null) return;
+		_enterTimes[watcher] = Time.fixedTime;
+	}
+
+	private void OnCollisionStay2D(Collision2D other) {
+		var watcher = other.gameObject.GetComponent<IPlayerWatcher>();
+		if (watcher == null) return;
+		float lastTime;
+		if (!_enterTimes.TryGetValue(watcher, out lastTime)) return;
+		var current = Time.fixedTime;
+		watcher.Colliding(current - lastTime, this);
+		_enterTimes[watcher] = current;
+	}
+
+	private void OnCollisionExit2D(Collision2D other) {
+		var watcher = other.gameObject.GetComponent<IPlayerWatcher>();
+		if (watcher == null) return;
+		if (!_enterTimes.ContainsKey(watcher)) return;
+		_enterTimes.Remove(watcher);
 	}
 }
