@@ -22,11 +22,3 @@ public class SeekerEntity : Entity, IPlayerWatcher {
         player.Health -= Dps * timeDelta;
     }
 }
-
-public class RechargeSpot : IPlayerWatcher {
-    public float RechargePerSec;
-    
-    public void Colliding(float timeDelta, PlayerBehaviour player) {
-        player.Health += RechargePerSec * timeDelta;
-    }
-}
