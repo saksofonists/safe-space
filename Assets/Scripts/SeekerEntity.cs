@@ -23,26 +23,10 @@ public class SeekerEntity : Entity, IPlayerWatcher {
     }
 }
 
-//public class RechargeSpot : MonoBehaviour {
-//    public Collider2D _collider;
-//
-//    private void OnCollisionEnter2D(Collision2D other) {
-//        if (!other.gameObject.CompareTag("Player")) return;
-//        var player = other.gameObject.GetComponent<PlayerBehaviour>();
-//        if (player == null) return;
-//        
-//        _lastTick = Time.fixedTime;
-//    }
-//
-//    private void OnCollisionStay2D(Collision2D other) {
-//        if (float.IsNegativeInfinity(_lastTick)) return;
-//
-//        var delta = Time.fixedTime - _lastTick;
-//        _player.Health -= Dps * delta;
-//        _lastTick = Time.fixedTime;
-//    }
-//
-//    private void OnCollisionExit2D(Collision2D other) {
-//        _lastTick = float.NegativeInfinity;
-//    }
-//}
+public class RechargeSpot : IPlayerWatcher {
+    public float RechargePerSec;
+    
+    public void Colliding(float timeDelta, PlayerBehaviour player) {
+        player.Health += RechargePerSec * timeDelta;
+    }
+}

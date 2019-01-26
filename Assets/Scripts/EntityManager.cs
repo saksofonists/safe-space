@@ -2,18 +2,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EntityManager : MonoBehaviour {
-    public PlayerBehaviour Player;
+    private PlayerBehaviour _player;
     public List<Entity> Entities;
     
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Start() {
+        _player = FindObjectOfType<PlayerBehaviour>();
     }
 
     void Update() {
         foreach (var entity in Entities) {
-            entity.Tick(Player);
+            entity.Tick(_player);
         }
     }
 }

@@ -2,16 +2,17 @@
 using UnityEngine.UI;
 
 public class HealthDisplay : MonoBehaviour {
-    public PlayerBehaviour Player;
+    private PlayerBehaviour _player;
     private Text _text;
 
     // Start is called before the first frame update
     void Start() {
+        _player = FindObjectOfType<PlayerBehaviour>();
         _text = GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update() {
-        _text.text = "(debug) HP: " + Player.Health;
+        _text.text = "(debug) HP: " + _player.Health;
     }
 }

@@ -1,16 +1,40 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehaviour : MonoBehaviour {
 	public Vector2 Speed;
 	private Rigidbody2D _body;
 	public Animator Animator;
-	public float Health;
+	public float MaxHealth;
+
+	private float _health;
+	public float Health {
+		get { return _health; }
+		set {
+			if (value < 0) {
+				_health = 0;
+				Die();
+			}
+			else if (value > MaxHealth) {
+				_health = MaxHealth;
+			}
+			else {
+				_health = value;
+			}
+		}
+	}
+
+	private void Die() {
+		Debug.Log("F");
+		SceneManager.LoadScene("Scenes/Menu");
+	}
 
 	private Dictionary<IPlayerWatcher, float> _enterTimes = new Dictionary<IPlayerWatcher, float>();
 
 	private void Start() {
 		_body = GetComponent<Rigidbody2D>();
+		_health = MaxHealth;
 	}
 
 	private void Update() {
@@ -21,11 +45,13 @@ public class PlayerBehaviour : MonoBehaviour {
 		if (Input.GetKey(KeyCode.D)) xdir++;
 		if (Input.GetKey(KeyCode.W)) ydir++;
 		if (Input.GetKey(KeyCode.S)) ydir--;
-		
-		Animator.SetBool("MoveLeft", xdir < 0);
-		Animator.SetBool("MoveRight", xdir > 0);
-		Animator.SetBool("MoveUp", ydir > 0);
-		Animator.SetBool("MoveDown", ydir < 0);
+
+		if (Animator != null) {
+			Animator.SetBool("MoveLeft", xdir < 0);
+			Animator.SetBool("MoveRight", xdir > 0);
+			Animator.SetBool("MoveUp", ydir > 0);
+			Animator.SetBool("MoveDown", ydir < 0);
+		}
 
 		_body.velocity = Speed * new Vector2(xdir, ydir);
 	}
