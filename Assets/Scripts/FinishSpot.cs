@@ -10,7 +10,7 @@ public class FinishSpot : MonoBehaviour, IPlayerWatcher  {
         _once = true;
 
         vAudio.Play();
-        FinishScreen.Message = "Gz";
+        FinishScreen.Message = "Safe...";
         FinishScreen.gameObject.SetActive(true);
 
         FindObjectOfType<EntityManager>().gameObject.SetActive(false);
