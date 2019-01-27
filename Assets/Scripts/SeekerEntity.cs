@@ -11,9 +11,11 @@ public class SeekerEntity : Entity, IPlayerWatcher {
     private bool _colliding;
 
     private float _lastTick;
+    private Animator _animator;
 
     private void Start() {
         _body = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
     }
 
     public override void Tick(PlayerBehaviour player, bool inStealth) {
@@ -30,6 +32,11 @@ public class SeekerEntity : Entity, IPlayerWatcher {
             if (col.CompareTag("Player") &&!inStealth) {
                 var direction = (col.transform.position - transform.position).normalized;
                 _body.velocity = direction * Speed;
+                
+                _animator.SetBool("MoveLeft", direction.x < 0);
+                _animator.SetBool("MoveRight", direction.x > 1);
+                _animator.SetBool("MoveUp", direction.y > 0);
+                _animator.SetBool("MoveDown", direction.y < 0);
             }
         }
     }
