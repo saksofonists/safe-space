@@ -18,7 +18,8 @@ public class SeekerEntity : Entity, IPlayerWatcher {
 
     public override void Tick(PlayerBehaviour player) {
         if (AggroIndicator != null) {
-            AggroIndicator.localScale = new Vector3(AggroRange, AggroRange, 1);
+            var scale = 0.0625F * AggroRange; // 64 / 1024
+            AggroIndicator.localScale = new Vector3(scale, scale, 1);
         }
         if (_colliding) return;        
         
