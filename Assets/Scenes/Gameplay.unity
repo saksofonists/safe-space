@@ -4532,7 +4532,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 860156920}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.025999643, y: -5.865999, z: -10}
+  m_LocalPosition: {x: 0.025999524, y: -5.865999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 634332288}
@@ -41053,6 +41053,16 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 1350160450272232990, guid: dbce8c37c309c824fb70ef3ef027a2e0,
+        type: 3}
+      propertyPath: FinishScreen
+      value: 
+      objectReference: {fileID: 2688714956465701131}
+    - target: {fileID: 1350160450272232990, guid: dbce8c37c309c824fb70ef3ef027a2e0,
+        type: 3}
+      propertyPath: vAudio
+      value: 
+      objectReference: {fileID: 80191391}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbce8c37c309c824fb70ef3ef027a2e0, type: 3}
 --- !u!4 &1306034362 stripped
@@ -41253,7 +41263,7 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf000000000000000000000000000000000000000000000000000000000000000000000000
+      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf00000000000000000000803f0000803f0000803f00000000000000000000803f00000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
@@ -42871,7 +42881,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1670807134}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.025999643, y: -5.865999, z: -10}
+  m_LocalPosition: {x: 0.025999524, y: -5.865999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -44803,40 +44813,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1976493331}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1990353614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 1317986461}
-  m_Color: {r: 0.8050784, g: 0.52661663, b: 0.5294884, a: 1}
-  m_Transform:
-    e00: 1
-    e01: 0
-    e02: 0
-    e03: 0
-    e10: 0
-    e11: 1
-    e12: 0
-    e13: 0
-    e20: 0
-    e21: 0
-    e22: 1
-    e23: 0
-    e30: 0
-    e31: 0
-    e32: 0
-    e33: 1
-  m_InstancedGameObject: {fileID: 0}
-  m_Flags: 3
-  m_ColliderType: 1
 --- !u!4 &2009499384 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 500743228433291599, guid: 7e027ecbb5439c440b5f21803e82870e,
