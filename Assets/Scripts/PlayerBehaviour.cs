@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -28,9 +29,14 @@ public class PlayerBehaviour : MonoBehaviour {
 	}
 
 	private void Die() {
-		FinishScreen.Message = "F";
-		FinishScreen.gameObject.SetActive(true);
+		Animator.SetBool("Dead", true);
+		StartCoroutine(DieForReal());
 	}
+
+	private IEnumerator DieForReal() {
+		yield return new WaitForSeconds(2f);
+		FinishScreen.Message = "F";
+		FinishScreen.gameObject.SetActive(true);	}
 
 	private Dictionary<IPlayerWatcher, float> _enterTimes = new Dictionary<IPlayerWatcher, float>();
 
