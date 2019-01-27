@@ -33,10 +33,10 @@ public class SeekerEntity : Entity, IPlayerWatcher {
                 var direction = (col.transform.position - transform.position).normalized;
                 _body.velocity = direction * Speed;
                 
-                _animator.SetBool("MoveLeft", direction.x < 0);
-                _animator.SetBool("MoveRight", direction.x > 1);
-                _animator.SetBool("MoveUp", direction.y > 0);
-                _animator.SetBool("MoveDown", direction.y < 0);
+                _animator.SetBool("MoveLeft", direction.x < 0 && direction.x < direction.y);
+                _animator.SetBool("MoveRight", direction.x > 0 && direction.x > direction.y);
+                _animator.SetBool("MoveUp", direction.y > 0 && direction.y > direction.x);
+                _animator.SetBool("MoveDown", direction.y < 0 && direction.y < direction.x);
             }
         }
     }
