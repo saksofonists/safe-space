@@ -798,6 +798,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 348414493, guid: dbce8c37c309c824fb70ef3ef027a2e0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1647203508, guid: dbce8c37c309c824fb70ef3ef027a2e0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1713493002, guid: dbce8c37c309c824fb70ef3ef027a2e0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1723815363, guid: dbce8c37c309c824fb70ef3ef027a2e0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1822287354, guid: dbce8c37c309c824fb70ef3ef027a2e0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099896495, guid: dbce8c37c309c824fb70ef3ef027a2e0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1306034363, guid: dbce8c37c309c824fb70ef3ef027a2e0, type: 3}
       propertyPath: FinishScreen
       value: 
