@@ -1404,7 +1404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NewGame: {fileID: 2105529219}
-  Instructions: {fileID: 0}
+  Instructions: {fileID: 608240204}
   Quit: {fileID: 1669879438}
 --- !u!1 &2105529217
 GameObject:
