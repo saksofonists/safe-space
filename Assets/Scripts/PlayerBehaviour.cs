@@ -35,7 +35,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	private IEnumerator DieForReal() {
 		yield return new WaitForSeconds(2f);
-		FinishScreen.Message = "Please, leave!";
+		FinishScreen.Message = "Please everyone, leave!";
 		FinishScreen.gameObject.SetActive(true);	}
 
 	private Dictionary<IPlayerWatcher, float> _enterTimes = new Dictionary<IPlayerWatcher, float>();
