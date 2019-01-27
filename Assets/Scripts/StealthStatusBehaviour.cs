@@ -1,22 +1,22 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SprintStatusBehaviour : MonoBehaviour {
+public class StealthStatusBehaviour : MonoBehaviour {
     public Sprite Available;
     public Sprite Unavailable;
     
     private Image _image;
-    private MovementSpeedBehaviour _player;
+    private EntityManager _entities;
 
     private void Start() {
-        _player = FindObjectOfType<MovementSpeedBehaviour>();
+        _entities = FindObjectOfType<EntityManager>();
         _image = GetComponent<Image>();
     }
     
     private void Update() {
-        _image.sprite = _player.CanSprint ? Available : Unavailable;
+        _image.sprite = _entities.CanStealth ? Available : Unavailable;
         var color = Color.white;
-        color.a = _player.CanSprint ? 1 : 0.2f;
+        color.a = _entities.CanStealth ? 1 : 0f;
         _image.color = color;
     }
 }
