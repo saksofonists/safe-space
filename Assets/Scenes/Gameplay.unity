@@ -201,13 +201,7 @@ PrefabInstance:
       propertyPath: clip
       value: 
       objectReference: {fileID: 94502370}
-    - target: {fileID: 4986691229100216577, guid: 099a54a70fb7f7240926ee65ddd223a3,
-        type: 3}
-      propertyPath: MaxHealth
-      value: 5
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 485068387, guid: 099a54a70fb7f7240926ee65ddd223a3, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 099a54a70fb7f7240926ee65ddd223a3, type: 3}
 --- !u!1 &634332287
 GameObject:
@@ -783,7 +777,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -807,7 +801,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1670807134}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.025999643, y: -5.865999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1320,7 +1314,7 @@ PrefabInstance:
     - target: {fileID: 1417861666327378289, guid: 7f3572439ca21d040a27f8efc722e8bd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1417861666327378289, guid: 7f3572439ca21d040a27f8efc722e8bd,
         type: 3}
