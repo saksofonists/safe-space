@@ -16,7 +16,7 @@ public class StealthStatusBehaviour : MonoBehaviour {
     private void Update() {
         _image.sprite = _entities.CanStealth ? Available : Unavailable;
         var color = Color.white;
-        color.a = _entities.CanStealth ? 1 : 0f;
+        color.a = _entities.CanStealth ? 1 : 0.2f;
         _image.color = color;
     }
 }
