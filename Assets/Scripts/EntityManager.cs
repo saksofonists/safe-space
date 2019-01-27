@@ -15,6 +15,8 @@ public class EntityManager : MonoBehaviour {
         private set;
         get;
     }
+
+    public bool InStealth;
     
     // Start is called before the first frame update
     void Start() {
@@ -27,18 +29,19 @@ public class EntityManager : MonoBehaviour {
         
         CanStealth = sinceLastStart > StealthDuration + StealthCooldown;
 
-        var inStealth = false;
-
         if (sinceLastStart < StealthDuration) {
             // in sprint
-            inStealth = true;
+            InStealth = true;
         }
         else if (sinceLastStart > StealthDuration + StealthCooldown && Input.GetKey(KeyCode.E)) {
             _lastStealth = Time.time;
-            inStealth = true;
+            InStealth = true;
+        }
+        else {
+            InStealth = false;
         }
 
-        if (inStealth) {
+        if (InStealth) {
             _vignette.VignetteInnerSaturation = 0f;
             _vignette.VignetteOuterSaturation = 0f;
         }
@@ -49,7 +52,7 @@ public class EntityManager : MonoBehaviour {
         
         foreach (var entity in Entities) {
             if (!entity.gameObject.activeSelf) continue;
-            entity.Tick(_player, inStealth);
+            entity.Tick(_player, InStealth);
         }
     }
 }

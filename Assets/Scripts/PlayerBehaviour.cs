@@ -39,9 +39,11 @@ public class PlayerBehaviour : MonoBehaviour {
 		FinishScreen.gameObject.SetActive(true);	}
 
 	private Dictionary<IPlayerWatcher, float> _enterTimes = new Dictionary<IPlayerWatcher, float>();
+	private EntityManager _entities;
 
 	private void Start() {
 		_body = GetComponent<Rigidbody2D>();
+		_entities = FindObjectOfType<EntityManager>();
 		_health = MaxHealth;
         clip.Play();
 	}
@@ -68,6 +70,8 @@ public class PlayerBehaviour : MonoBehaviour {
 			Animator.SetBool("MoveUp", ydir > 0);
 			Animator.SetBool("MoveDown", ydir < 0);
 		}
+        
+        Animator.SetBool("Stealth", _entities.InStealth);
 
 		var copy = _enterTimes.Keys.ToList();
 
