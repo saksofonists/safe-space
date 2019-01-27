@@ -16,7 +16,7 @@ public class SeekerEntity : Entity, IPlayerWatcher {
         _body = GetComponent<Rigidbody2D>();
     }
 
-    public override void Tick(PlayerBehaviour player) {
+    public override void Tick(PlayerBehaviour player, bool inStealth) {
         if (AggroIndicator != null) {
             var scale = 0.0625F * AggroRange; // 64 / 1024
             AggroIndicator.localScale = new Vector3(scale, scale, 1);
@@ -27,7 +27,7 @@ public class SeekerEntity : Entity, IPlayerWatcher {
         if (overlap == null) return;
         
         foreach (var col in overlap) {
-            if (col.CompareTag("Player")) {
+            if (col.CompareTag("Player") &&!inStealth) {
                 var direction = (col.transform.position - transform.position).normalized;
                 _body.velocity = direction * Speed;
             }

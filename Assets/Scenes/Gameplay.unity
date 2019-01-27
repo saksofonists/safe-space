@@ -754,7 +754,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -14.6, y: 14.6}
+  m_AnchoredPosition: {x: -14.600006, y: 14.600006}
   m_SizeDelta: {x: 48, y: 48}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1381414256
@@ -1029,10 +1029,10 @@ MonoBehaviour:
   VignetteInnerColor: {r: 0, g: 0, b: 0, a: 0}
   VignetteOuterColor: {r: 0, g: 0, b: 0, a: 1}
   VignetteInnerSaturation: 1
-  VignetteOuterSaturation: 0
+  VignetteOuterSaturation: 1
   VignetteDebugEnabled: 0
   IsAnamorphicVignette: 0
-  EnableSaturationVignette: 0
+  EnableSaturationVignette: 1
   IntegrationType: 2
   IntegrationStage: 1
   FinalVignetteShader: {fileID: 4800000, guid: d4c4c6a3a749d0f49a5275153224efbf, type: 3}
@@ -1146,6 +1146,8 @@ MonoBehaviour:
   Entities:
   - {fileID: 3133688834490411087}
   - {fileID: 1649896719}
+  StealthDuration: 3
+  StealthCooldown: 10
 --- !u!4 &1851741660
 Transform:
   m_ObjectHideFlags: 0
