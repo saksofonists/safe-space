@@ -7,9 +7,14 @@ public class MovementSpeedBehaviour : MonoBehaviour{
     public float SprintCooldown;
     public int Stoppers;
 
-    private float _lastSprint = float.NegativeInfinity;
+    private float _lastSprint = -123123;
     private PlayerBehaviour _player;
     private Rigidbody2D _playerBody;
+
+    public bool CanSprint {
+        private set;
+        get;
+    }
 
     private void Start() {
         _player = FindObjectOfType<PlayerBehaviour>();
@@ -26,6 +31,8 @@ public class MovementSpeedBehaviour : MonoBehaviour{
         }
 
         _playerBody.bodyType = RigidbodyType2D.Dynamic;
+
+        CanSprint = sinceLastStart > SprintDuration + SprintCooldown;
 
         if (sinceLastStart < SprintDuration) {
             // in sprint
